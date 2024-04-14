@@ -1,93 +1,20 @@
-[2024-04-06 19:05:35,163: INFO: demo: Welcome]
-[2024-04-10 00:23:16,533: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
-[2024-04-10 00:23:16,539: INFO: common: yaml file: config\config.yaml loaded successfully]
-[2024-04-10 00:23:16,546: INFO: common: yaml file: params.yaml loaded successfully]
-[2024-04-10 00:23:16,547: ERROR: main: yaml file is empty]
-Traceback (most recent call last):
-  File "d:\work\mine\datascience\projects\datascience\chest-disease-classification\src\cnnClassifier\utils\common.py", line 33, in read_yaml
-    return ConfigBox(content)
-  File "box\box.py", line 259, in box.box.Box.__init__
-box.exceptions.BoxValueError: First argument must be mapping or iterable
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "d:\Work\Mine\DataScience\Projects\DataScience\Chest-Disease-Classification\main.py", line 10, in <module>
-    obj.main()
-  File "d:\work\mine\datascience\projects\datascience\chest-disease-classification\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 13, in main
-    config = ConfigurationManager()
-  File "d:\work\mine\datascience\projects\datascience\chest-disease-classification\src\cnnClassifier\config\configuration.py", line 15, in __init__
-    self.params = read_yaml(params_filepath)
-  File "C:\Users\GetInnotized\anaconda3\envs\chest\lib\site-packages\ensure\main.py", line 849, in __call__
-    return_val = self.f(*args, **kwargs)
-  File "d:\work\mine\datascience\projects\datascience\chest-disease-classification\src\cnnClassifier\utils\common.py", line 35, in read_yaml
-    raise ValueError("yaml file is empty")
-ValueError: yaml file is empty
-[2024-04-10 00:23:51,899: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
-[2024-04-10 00:23:51,900: INFO: common: yaml file: config\config.yaml loaded successfully]
-[2024-04-10 00:23:51,904: INFO: common: yaml file: params.yaml loaded successfully]
-[2024-04-10 00:23:51,905: INFO: common: created directory at: artifacts]
-[2024-04-10 00:23:51,906: INFO: common: created directory at: artifacts/data_ingestion]
-[2024-04-10 00:23:51,907: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d/view?usp=sharing into file artifacts/data_ingestion/data.zip]
-[2024-04-10 00:23:54,623: ERROR: main: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?/export=download&id=1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d
-
-but Gdown can't. Please check connections and permissions.]
-Traceback (most recent call last):
-  File "C:\Users\GetInnotized\anaconda3\envs\chest\lib\site-packages\gdown\download.py", line 253, in download
-    url = get_url_from_gdrive_confirmation(res.text)
-  File "C:\Users\GetInnotized\anaconda3\envs\chest\lib\site-packages\gdown\download.py", line 54, in get_url_from_gdrive_confirmation
-    raise FileURLRetrievalError(
-gdown.exceptions.FileURLRetrievalError: Cannot retrieve the public link of the file. You may need to change the permission to 'Anyone with the link', or have had many accesses. Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "D:\Work\Mine\DataScience\Projects\DataScience\Chest-Disease-Classification\main.py", line 10, in <module>
-    obj.main()
-  File "d:\work\mine\datascience\projects\datascience\chest-disease-classification\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 16, in main
-    data_ingestion.download_file()
-  File "d:\work\mine\datascience\projects\datascience\chest-disease-classification\src\cnnClassifier\components\data_ingestion.py", line 35, in download_file
-    raise e
-  File "d:\work\mine\datascience\projects\datascience\chest-disease-classification\src\cnnClassifier\components\data_ingestion.py", line 30, in download_file
-    gdown.download(prefix+file_id,zip_download_dir)
-  File "C:\Users\GetInnotized\anaconda3\envs\chest\lib\site-packages\gdown\download.py", line 264, in download
-    raise FileURLRetrievalError(message)
-gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?/export=download&id=1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d
-
-but Gdown can't. Please check connections and permissions.
-[2024-04-10 00:25:16,379: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
-[2024-04-10 00:25:16,381: INFO: common: yaml file: config\config.yaml loaded successfully]
-[2024-04-10 00:25:16,381: INFO: common: yaml file: params.yaml loaded successfully]
-[2024-04-10 00:25:16,382: INFO: common: created directory at: artifacts]
-[2024-04-10 00:25:16,382: INFO: common: created directory at: artifacts/data_ingestion]
-[2024-04-10 00:25:16,382: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d/view?usp=sharing into file artifacts/data_ingestion/data.zip]
-[2024-04-10 00:25:26,001: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d/view?usp=sharing into file artifacts/data_ingestion/data.zip]
-[2024-04-10 00:25:26,547: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<
+[2024-04-14 16:09:41,720: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-04-14 16:09:41,722: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-04-14 16:09:41,724: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-04-14 16:09:41,724: INFO: common: created directory at: artifacts]
+[2024-04-14 16:09:41,725: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-04-14 16:09:41,726: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-04-14 16:09:51,255: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-04-14 16:09:51,659: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<
 
 x==========x]
-[2024-04-10 00:26:26,141: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
-[2024-04-10 00:26:26,142: INFO: common: yaml file: config\config.yaml loaded successfully]
-[2024-04-10 00:26:26,143: INFO: common: yaml file: params.yaml loaded successfully]
-[2024-04-10 00:26:26,144: INFO: common: created directory at: artifacts]
-[2024-04-10 00:26:26,144: INFO: common: created directory at: artifacts/data_ingestion]
-[2024-04-10 00:26:26,145: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d/view?usp=sharing into file artifacts/data_ingestion/data.zip]
-[2024-04-10 00:26:35,841: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1s3rGwQ1kZ_99O44vIJ0jSULedVrGP27d/view?usp=sharing into file artifacts/data_ingestion/data.zip]
-[2024-04-10 00:26:36,309: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<
+[2024-04-14 16:09:51,660: INFO: main: *******************]
+[2024-04-14 16:09:51,660: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-04-14 16:09:51,662: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-04-14 16:09:51,664: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-04-14 16:09:51,664: INFO: common: created directory at: artifacts]
+[2024-04-14 16:09:51,665: INFO: common: created directory at: artifcats/prepare_base_model]
+[2024-04-14 16:10:01,332: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-04-14 16:10:01,542: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
 
 x==========x]
